@@ -11,7 +11,7 @@ for filename in os.listdir(folder_path):   # iterate over all files in the folde
         cursor = conn.cursor()   # create a cursor for the connection
         # execute a SQL query to create a table with the same name as the file (minus the .csv extension),
         # and insert the data from the CSV file into the table using the csv_auto() function
-        cursor.execute(f'CREATE TABLE {table_name} AS SELECT * FROM csv_auto(\'{file_path}\')')
+        cursor.execute(f'CREATE TABLE {table_name} AS SELECT * FROM read_csv_auto(\'{file_path}\')')
         
 conn.close() 
 
